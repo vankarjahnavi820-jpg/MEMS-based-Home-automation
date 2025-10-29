@@ -1,0 +1,20 @@
+#  MEMS-Based Home Automation Using Bulb
+
+This project controls a *bulb automatically* using a *MEMS accelerometer sensor* and *Arduino UNO*.  
+When the sensor tilts, the Arduino reads the motion and activates a *relay module* to switch the bulb *ON or OFF*.
+
+---
+
+##  Working:
+- MEMS sensor detects tilt/motion. 
+- Arduino reads sensor values.  
+- Relay turns the bulb ON/OFF based on tilt direction.  
+
+---
+
+##  Components:
+- Arduino UNO. 
+- MEMS Sensor (ADXL335 / MPU6050).  
+- Relay Module  
+- Bulb.
+- Jumper Wires.
