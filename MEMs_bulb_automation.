@@ -1,0 +1,26 @@
+// MEMS-Based Home Automation Using Bulb
+// Arduino + MEMS Sensor + Relay
+
+int xPin = A0;        // X-axis of MEMS sensor
+int relayPin = 8;     // Relay module input pin
+int xValue = 0;
+
+void setup() {
+  pinMode(relayPin, OUTPUT);
+  digitalWrite(relayPin, LOW); // Bulb OFF initially
+  Serial.begin(9600);
+}
+
+void loop() {
+  xValue = analogRead(xPin);
+  Serial.println(xValue); // Print sensor value
+
+  if (xValue > 600) {           // Tilt one side
+    digitalWrite(relayPin, HIGH);  // Bulb ON
+  } 
+  else if (xValue < 400) {      // Tilt opposite side
+    digitalWrite(relayPin, LOW);   // Bulb OFF
+  }
+
+  delay(300);
+}
